@@ -8,16 +8,16 @@ public class EquipmentRequest
     public int Id { get; set; }
 
     [Required]
-    public string Name { get; set; } = string.Empty;
+    public string Name { get; set; } = "";
 
     [Required]
     [EmailAddress]
-    public string Email { get; set; } = string.Empty;
+    public string Email { get; set; } = "";
 
     [Required]
     [RegularExpression(@"^\d{3}-\d{3}-\d{4}$", ErrorMessage = "Phone number must match the format xxx-xxx-xxxx (e.g., 905-922-2222).")]
     [Display(Name = "Phone Number ")]
-    public string PhoneNumber { get; set; } = string.Empty;
+    public string PhoneNumber { get; set; } = "";
 
     [Required]
     [Display(Name = "Role Type ")]
@@ -29,7 +29,7 @@ public class EquipmentRequest
     
     [Required]
     [Display(Name = "Request Details")]
-    public string RequestDetails { get; set; } = string.Empty;
+    public string RequestDetails { get; set; } = "";
 
     [Required]
     [Range(1, int.MaxValue, ErrorMessage = "Duration must be a positive number greater than zero.")]

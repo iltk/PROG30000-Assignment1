@@ -1,6 +1,7 @@
 @model EquipmentRequest
 
-<form method="post" asp-action="RequestForm" asp-controller="Request">
+
+<form method="post" asp-action="RequestForm" asp-controller="Request" class="col-lg-6">
 
     <div class="mb-3">
         <label asp-for="Name" class="form-label"></label>
@@ -16,7 +17,7 @@
 
     <div class="mb-3">
         <label asp-for="PhoneNumber" class="form-label"></label>
-        <input asp-for="PhoneNumber" class="form-control" />
+        <input asp-for="PhoneNumber" class="form-control" placeholder="905-922-2222" />
         <span asp-validation-for="PhoneNumber" class="text-danger"></span>
     </div>
 
@@ -38,7 +39,7 @@
 
     <div class="mb-3">
         <label asp-for="RequestDetails" class="form-label"></label>
-        <textarea asp-for="RequestDetails" class="form-control" placeholder="Enter request details..."></textarea>
+        <textarea asp-for="RequestDetails" class="form-control" rows="3" placeholder="Enter request details..."></textarea>
         <span asp-validation-for="RequestDetails" class="text-danger"></span>
     </div>
 
@@ -49,5 +50,4 @@
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
-
 </form>
