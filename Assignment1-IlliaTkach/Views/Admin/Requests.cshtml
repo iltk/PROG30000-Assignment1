@@ -1,11 +1,37 @@
-@{
-    ViewData["Title"] = "Admin Page";
+@model IEnumerable<EquipmentRequest>
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">No requests have been submitted yet.</div>
 }
-
-
-
-<div class="text-center">
-    <h1 class="display-4" >@ViewData["Title"]</h1>
-    
-    <p>Admin Page</p>
-</div>
+else
+{
+    <table class="table table-striped table-hover align-middle">
+        <thead class="table-dark">
+        <tr>
+            <th>Id</th>
+            <th>Equipment Type</th>
+            <th>Name</th>
+            <th>Role</th>
+            <th class="text-end">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var request in Model)
+        {
+            <tr>
+                <td>@request.Id</td>
+                <td>@request.EquipmentType</td>
+                <td>@request.Name</td>
+                <td>@request.RoleType</td>
+                <td class="text-end">
+                    <button type="button" class="btn btn-success btn-sm">Accept</button>
+                    <button type="button" class="btn btn-danger btn-sm">Deny</button>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
