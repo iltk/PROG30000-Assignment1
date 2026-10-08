@@ -1,0 +1,53 @@
+@model EquipmentRequest
+
+<form method="post" asp-action="RequestForm" asp-controller="Request">
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="PhoneNumber" class="form-label"></label>
+        <input asp-for="PhoneNumber" class="form-control" />
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="RoleType" class="form-label"></label>
+        <select asp-for="RoleType" class="form-select" asp-items="Html.GetEnumSelectList<RoleType>()">
+            <option value="">Select a role type</option>
+        </select>
+        <span asp-validation-for="RoleType" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="EquipmentType" class="form-label"></label>
+        <select asp-for="EquipmentType" class="form-select" asp-items="Html.GetEnumSelectList<EquipmentType>()">
+            <option value="">Select an equipment type</option>
+        </select>
+        <span asp-validation-for="EquipmentType" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="RequestDetails" class="form-label"></label>
+        <textarea asp-for="RequestDetails" class="form-control" placeholder="Enter request details..."></textarea>
+        <span asp-validation-for="RequestDetails" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Duration" class="form-label"></label>
+        <input asp-for="Duration" class="form-control" />
+        <span asp-validation-for="Duration" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
